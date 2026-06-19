@@ -1,14 +1,13 @@
-# questao 19 divisores de um numero
-
-# entrada
-print('Programa para contar os divisores de um numero')
+print('Programa que acha os divisores de um numero n')
 n = int(input('Informe o valor de n:'))
 
-# processamento
-contador = 0
-for i in range(n , 0 , -1): # começa a processa em n e vai ate o 1
-    if n % i == 0:
-        print(f'divisor {i}')
-        contador = contador + 1
-#saida
-print(f'o numero {n} tem {contador} divisores')
+print('Divisores')
+# vai iniciar a busca no proprio numero e vai decaindo
+# os valores de i ate chegar no numero 1 ...
+# exemplo se o numero for 20 ... vai dividir 20/20 , depois
+# 20/19 , depois 20/18 ... ate chegar no 20/1 . toda vez que
+# essa o resto da divisão for 0(zero) é pq o numero i é um divisor
+# de n ...
+for i in range(n,0,-1): 
+    if n % i == 0 :
+        print(i)
