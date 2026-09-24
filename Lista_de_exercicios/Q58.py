@@ -26,6 +26,11 @@ for k in contador1.keys():
     else:
         eh_anagrama = False
         break
+   
+# teste para saber se as duas palavras tem o mesmo numero de chaves
+# se não tiverem é pq tb não são anagramas
+if len(contador1.keys()) != len(contador2.keys()):
+    eh_anagrama= False
     
 if eh_anagrama:
     print('As duas palavras são anagramas')
