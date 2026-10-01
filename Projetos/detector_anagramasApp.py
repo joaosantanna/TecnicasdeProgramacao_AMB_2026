@@ -1,18 +1,18 @@
 import PySimpleGUI as sg
 from util_anagrama import processar_palavras
 
-sg.theme('Reddit')
+sg.theme('SystemDefault')
 
 
 desenho =[
-        [sg.Push(),sg.Text('Detector de Anagramas',font=('Helvetica',18)),
+        [sg.Push(),sg.Text('Detector de Anagramas',font=('Forte',20)),
          sg.Push()],
         [sg.Text('Primeira Palavra:',size=(15,1)),
          sg.InputText(key='-P1-')],
         [sg.Text('Segunda Palavra:',size=(15,1)),
          sg.InputText( key='-P2-')],
         [sg.Text('>>>',key='-SAIDA-')],
-        [sg.Submit(),sg.Button('Limpar Campos'),sg.Button('Sair')]
+        [sg.Submit(size=(14,1)),sg.Button('Limpar Campos'),sg.Button('Sair',size=(14,1))]
     ]
 
 janela = sg.Window('Anagrama detect ',layout=desenho,
@@ -36,6 +36,7 @@ while True:
     elif evento == 'Limpar Campos':
         janela['-P1-'].update('')
         janela['-P2-'].update('')
+        janela['-SAIDA-'].update('>>>')
     else:
         print('Comando não cadastrado')
     
